@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SAVILLS</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    
+
+ <!-- <script>
+    /* Script written by Adam Khoury @ DevelopPHP.com */
+    /* Video Tutorial: http://www.youtube.com/watch?v=EraNFJiY0Eg */
+    function _(el){
+        return document.getElementById(el);
+    }
+    function uploadFile(){
+        var file = _("file1").files[0];
+        // alert(file.name+" | "+file.size+" | "+file.type);
+        var formdata = new FormData();
+        formdata.append("file1", file);
+        var ajax = new XMLHttpRequest();
+        ajax.upload.addEventListener("progress", progressHandler, false);
+        ajax.addEventListener("load", completeHandler, false);
+        ajax.addEventListener("error", errorHandler, false);
+        ajax.addEventListener("abort", abortHandler, false);
+        ajax.open("POST", "file_upload_parser.php");
+        ajax.send(formdata);
+    }
+    function progressHandler(event){
+        _("loaded_n_total").innerHTML = "Uploaded "+event.loaded+" bytes of "+event.total;
+        var percent = (event.loaded / event.total) * 100;
+        _("progressBar").value = Math.round(percent);
+        _("status").innerHTML = Math.round(percent)+"% uploaded... please wait";
+    }
+    function completeHandler(event){
+        _("status").innerHTML = event.target.responseText;
+        _("progressBar").value = 0;
+    }
+    function errorHandler(event){
+        _("status").innerHTML = "Upload Failed";
+    }
+    function abortHandler(event){
+        _("status").innerHTML = "Upload Aborted";
+    }
+</script> -->
+
+    <style>
+    .tabcontent {
+        background-color: red;
+        color: white;
+        
+        
+        /* height: 100%; */
+    }
+    </style>
+
+</head>
+
+
+
+
+<body>
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">Savills Site</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Load data to SQL database
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="nav-link" href="/Users/khoi/Desktop/web-app-demo/templates/test.html">Url SharePoint</a></li>
+                        <li><a class="nav-link" href="/flat-file-insert">Flat File</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Location processing
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="nav-link" href="/Users/khoi/Desktop/web-app-demo/templates/test.html">Geocode get longitude-latitude</a></li>
+                        <li><a class="nav-link" href="/flat-file-insert">Reverse geocode</a></li>
+                    </ul>
+                </li>
+                <li >
+                    <a class="nav-link" href="/send-email-notification">Send notification email</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    
+    <main role="main" class="container">
+        
+        <div class="tab-content">
+            
+            <div class="tab-pane active">
+                <div>
+                ===============================================================================
+                    <h3>Description:</h3>
+                    <!-- <p>This site is used to merged multi .csv files (EP data) to .edf file: -->
+                    <p>This site is used to ...:
+ <!--                        <ul>
+                            <li>The filter included:</li>
+                                <ul>
+                                    <li> Applied highpass filter at 0.3
+                                    </li>
+
+                                    <li> Clipped data in range [-500;500].
+                                    </li>
+                                </ul>   
+                        </ul>
+                    </p>
+                    
+                    <p><u>Note:</u>
+                        <p><b>Name of the subject:</b> is the name of the subject (name of the folder contained EP .csv files).
+                        <p><b>Data type to merge:</b> type of data to merge.
+                        <p><b>Filter option:</b> option whether filtering data or not. -->
+                    </p>
+
+                    <h3>How to use:</h3>
+<!--                     <ul>
+                        <li><u>Input:</u> The zip file (contained EP data)</li>
+                        <li><u>Output:</u> .edf file.</li>
+                    </ul> -->
+                ===============================================================================
+                </div>
+                
+                <div id="wrapper">
+                    <div id="page-wrapper">
+                        <div class="row">
+                            <div class="container">
+                                <div id="identitycard" style="margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+                                    <div class="panel panel-info">
+                                        <div class="panel-heading">
+                                            <div class="panel-title">Input email information</div>
+                                        </div>
+                                        <div class="panel-body">
+                                            
+                                            <p>
+                                                {% with messages = get_flashed_messages(with_categories=true) %}
+                                                    {% if messages %}
+
+                                                    {% for category, message in messages %}
+                                                        {% if category == "success" or category == "unable_to_convert"%}
+                                                            {% if category == "success" %}
+                                                                <div class="alert alert-success">
+                                                                    <strong>{{ message }} successfully uploaded and converted </strong>
+<!--                                                                     <a href="/return-files/{{message}}" target="blank"><button class='btn btn-default'>Download</button></a>
+ -->                                                                </div>
+                                                            {% else %}
+                                                                <div class="alert alert-danger">
+                                                                    <strong>{{ message }} FAILED to convert!!!</strong>
+                                                                </div>
+                                                            {% endif %}
+                                                        {% else %}
+                                                            <div class="alert alert-danger">
+                                                                <strong>{{ message }} FAILED to upload due to wrong extension!!!</strong>
+                                                            </div>
+                                                        {% endif %}
+                                                    {% endfor %}
+
+                                                    {% endif %}
+                                                {% endwith %}
+
+                                            </p>
+
+                                            <div class="row" style="padding: 10px 15px 9px;">
+                                                <form method="post" action="/upload-email-address" enctype="multipart/form-data">
+                                                    <div class="form-group"> 
+                                                        <div class="row">
+                                                            <label style="padding: 0px 50px 0px 15px;">Email address: </label>
+                                                            <input type="text" name="subjectname" autocomplete="off" required=True placeholder="Ex: hcmcbi-intern02@savills.com.vn"><br><br>
+
+                                                        </div>
+
+                                                        <div class="row text-center" style="padding-left: 20px;padding-right: 20px;">
+                                                            <input type="submit" value="Submit" class="btn btn-lg btn-block btn-success" style="border-radius: 50px;background-color:hover: #35832f;" onclick="uploadFile()">
+                                                        </div>                                            
+                                                    </div>                                                                                          
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+          
+
+        </div>
+    </main>
+</body>
+</html>
